@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>The Two Halves Intensive | WellBuilt.</title>
-<meta name="description" content="Founder storytelling that sells. Build a founder brand that makes raising, hiring and scaling easier.">
+<meta name="format-detection" content="telephone=no">
+<title>WellBuilt. Studio | Done-for-you founder storytelling</title>
+<meta name="description" content="Done-for-you founder storytelling for VC-backed and high-growth companies through LinkedIn, newsletters and books.">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.iamwellbuilt.com/">
-<meta property="og:title" content="The Two Halves Intensive | WellBuilt.">
-<meta property="og:description" content="Founder storytelling that sells. Build a founder brand that makes raising, hiring and scaling easier.">
+<meta property="og:title" content="WellBuilt. Studio | Done-for-you founder storytelling">
+<meta property="og:description" content="Done-for-you founder storytelling for VC-backed and high-growth companies through LinkedIn, newsletters and books.">
 <meta property="og:image" content="https://www.iamwellbuilt.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="WellBuilt.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://www.iamwellbuilt.com/">
-<meta name="twitter:title" content="The Two Halves Intensive | WellBuilt.">
-<meta name="twitter:description" content="Founder storytelling that sells. Build a founder brand that makes raising, hiring and scaling easier.">
+<meta name="twitter:title" content="WellBuilt. Studio | Done-for-you founder storytelling">
+<meta name="twitter:description" content="Done-for-you founder storytelling for VC-backed and high-growth companies through LinkedIn, newsletters and books.">
 <meta name="twitter:image" content="https://www.iamwellbuilt.com/og-image.png">
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -604,6 +605,35 @@ section.block.light .stage .s-tag { border: 1px solid rgba(26,26,24,0.22); color
   .ladder-stages { grid-template-columns: 1fr; gap: 2px; }
   .s-arrow { display: none; }
 }
+
+/* ---- mobile fixes ---- */
+@media (max-width: 600px) {
+  /* 1. header: logo and CTA share one row without colliding */
+  .site-header .wm img { width: 128px !important; }
+  .site-header .cta { width: auto; padding: 11px 14px; font-size: 10px; letter-spacing: 0.05em; margin-right: 0; }
+
+  /* 2. cabin caption comes off the image, repo pattern */
+  .cabin-cap { position: static !important; background: var(--blush) !important; padding: 20px 22px !important; }
+  .cabin-cap .c1 { color: var(--charcoal) !important; font-size: 19px !important; text-shadow: none !important; }
+  .cabin-cap .c2 { color: var(--mid) !important; text-shadow: none !important; }
+
+  /* 3 + 6. price rows stack instead of splitting left and right */
+  .foundation .f-row, .rung { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .foundation .f-d { max-width: none; }
+  .rung .p .pm { text-align: left; }
+
+}
+
+/* 8. contact sits above the legal links on mobile */
+@media (max-width: 900px) {
+  .footer-main { display: contents; }
+  .footer-logo { order: 1; margin-bottom: 28px; }
+  .footer-contact { order: 2; align-self: flex-start; align-items: flex-start; text-align: left; }
+  .footer-links { order: 3; margin: 24px 0 0; }
+  .footer-legal { order: 4; }
+  .footer-copy { order: 5; }
+  .footer-inner { gap: 24px; }
+}
 </style>
 </head>
 <body>
@@ -1102,7 +1132,7 @@ section.block.light .stage .s-tag { border: 1px solid rgba(26,26,24,0.22); color
         <h2 style="margin: 0 0 32px; max-width: 720px;">When you work with Papillon, it&rsquo;s like having your best friend.</h2>
         <div class="vid-wrap">
           <video controls preload="metadata" playsinline poster="morag-poster.jpg" style="width: 100%; height: auto; aspect-ratio: 16 / 9; display: block; background: #000; object-fit: cover;" src="morag-testimonial-1080p.mp4"></video>
-          <button class="vid-play" aria-label="Play Morag's testimonial"><span></span>Watch</button>
+          
         </div>
       </div>
 
@@ -1185,15 +1215,6 @@ section.block.light .stage .s-tag { border: 1px solid rgba(26,26,24,0.22); color
     window.addEventListener('scroll',lgUpdate,{passive:true});
     window.addEventListener('resize',lgUpdate);
     lgUpdate();
-  })();
-
-  // Morag video: lime play button hides once playing
-  (function(){
-    var w=document.querySelector('.vid-wrap'); if(!w) return;
-    var v=w.querySelector('video'), b=w.querySelector('.vid-play');
-    b.addEventListener('click', function(){ v.play(); });
-    v.addEventListener('play', function(){ w.classList.add('playing'); });
-    v.addEventListener('pause', function(){ w.classList.remove('playing'); });
   })();
 
   // Rail cards navigate to their section
