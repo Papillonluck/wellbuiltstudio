@@ -613,7 +613,7 @@ section.block.light .stage .s-tag { border: 1px solid rgba(26,26,24,0.22); color
   .site-header .cta { width: auto; padding: 11px 14px; font-size: 10px; letter-spacing: 0.05em; margin-right: 0; }
 
   /* 2. cabin caption comes off the image, repo pattern */
-  .cabin-cap { position: static !important; background: var(--blush) !important; padding: 20px 22px !important; }
+  .cabin-cap { position: static !important; background: var(--cream) !important; padding: 20px 22px !important; }
   .cabin-cap .c1 { color: var(--charcoal) !important; font-size: 19px !important; text-shadow: none !important; }
   .cabin-cap .c2 { color: var(--mid) !important; text-shadow: none !important; }
 
@@ -634,6 +634,18 @@ section.block.light .stage .s-tag { border: 1px solid rgba(26,26,24,0.22); color
   .footer-copy { order: 5; }
   .footer-inner { gap: 24px; }
 }
+
+/* smallest phones (SE, 320px): header still has to fit one row */
+@media (max-width: 360px) {
+  .site-header .wm img { width: 104px !important; }
+  .site-header .cta { padding: 10px 8px; font-size: 9px; letter-spacing: 0.02em; }
+  .hdr-inner { padding: 10px 16px; }
+  .sec-head .tag { white-space: normal; }
+  .hero .cta, .dark-panel .cta, .closing .cta, .who-feature-panel .cta { padding-left: 24px; padding-right: 24px; }
+}
+
+/* image credit stays the repo's soft grey, not body grey */
+section.block.light .cabin-credit { color: var(--soft); }
 </style>
 </head>
 <body>
