@@ -667,6 +667,20 @@ section.block.light .cabin-credit { color: var(--soft); }
 
 section.block.light .who-feature-panel p.wf-price { font-family: Georgia, 'Times New Roman', serif; font-size: 30px; color: var(--cream); margin: 18px 0 0; }
 section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86; margin: 22px 0 0; }
+
+/* ============ MOBILE: stacked scroll cards ============ */
+@media (max-width: 900px) {
+  section.block.light,
+  section.closing {
+    position: sticky;
+    margin: 0 0 26px;
+    box-shadow: 0 -28px 60px -18px rgba(0,0,0,0.85);
+  }
+  section.block.light { padding: 44px 22px 52px; }
+  section.closing { padding: 0; }
+  section.closing .closing-panel { margin: 0; }
+  main.content { padding-bottom: 26px; }
+}
 </style>
 </head>
 <body>
@@ -1288,6 +1302,39 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
   window.addEventListener('scroll', spy, { passive: true });
   window.addEventListener('resize', spy);
   spy();
+
+  // Mobile stacked cards: each section pins when its bottom reaches the
+  // bottom of the screen, and the next section slides up over it.
+  (function(){
+    var GAP = 26;
+    var mq = window.matchMedia('(max-width: 900px)');
+    var stack = [].slice.call(
+      document.querySelectorAll('main.content > section.block.light, main.content > section.closing')
+    );
+    if (!stack.length) return;
+
+    function layout(){
+      if (!mq.matches) {
+        stack.forEach(function(el){ el.style.top = ''; el.style.zIndex = ''; });
+        return;
+      }
+      var vh = window.innerHeight;
+      stack.forEach(function(el, i){
+        el.style.zIndex = 11 + i;
+        el.style.top = -(el.offsetHeight - vh + GAP) + 'px';
+      });
+    }
+
+    layout();
+    window.addEventListener('resize', layout);
+    window.addEventListener('orientationchange', layout);
+    window.addEventListener('load', layout);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout);
+    if (window.ResizeObserver) {
+      var ro = new ResizeObserver(function(){ layout(); });
+      stack.forEach(function(el){ ro.observe(el); });
+    }
+  })();
 </script>
 </body>
 </html>
