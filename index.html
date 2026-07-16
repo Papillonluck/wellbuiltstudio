@@ -670,6 +670,8 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
 
 /* ============ MOBILE: stacked scroll cards ============ */
 @media (max-width: 900px) {
+  .cred-track { animation-duration: 20s; }
+  section.hero { position: sticky; }
   section.block.light,
   section.closing {
     position: sticky;
@@ -1309,7 +1311,7 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
     var GAP = 26;
     var mq = window.matchMedia('(max-width: 900px)');
     var stack = [].slice.call(
-      document.querySelectorAll('main.content > section.block.light, main.content > section.closing')
+      document.querySelectorAll('main.content > section.hero, main.content > section.block.light, main.content > section.closing')
     );
     if (!stack.length) return;
 
