@@ -1269,6 +1269,12 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
       return out;
     }
 
+    // A button must never be hidden by a scroll animation. Anything carrying a
+    // CTA opts out entirely, so it is visible from first paint on every device.
+    [].slice.call(document.querySelectorAll('.reveal')).forEach(function(el){
+      if (el.matches('.cta') || el.querySelector('.cta')) el.classList.remove('reveal');
+    });
+
     var seed = [].slice.call(document.querySelectorAll('.reveal'));
     var targets = [];
     seed.forEach(function(el){ targets = targets.concat(split(el, 0)); });
