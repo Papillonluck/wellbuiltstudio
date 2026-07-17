@@ -147,13 +147,13 @@ p strong { font-weight: 500; color: var(--text-strong); }
 .hero h1 { max-width: 16ch; margin-bottom: 34px; }
 .hero .lead { margin-bottom: 0; }
 .hero .cta { margin-top: 24px; align-self: flex-start; padding: 18px 40px; }
-.hero-cred { flex: 0 0 auto; background: var(--blush); padding: 22px 0 32px; margin: 44px -44px 0; overflow: hidden; --ls: 1.0; }
+.hero-cred { flex: 0 0 auto; background: var(--blush); padding: 22px 0 32px; margin: 44px -44px 0; overflow: hidden; --ls: 0.74; }
 .cred-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); text-align: center; max-width: none; margin: 0 0 34px; }
 .cred-viewport { overflow: hidden; }
-.cred-track { display: flex; align-items: center; width: max-content; animation: credscroll 40s linear infinite; }
+.cred-track { display: flex; align-items: center; width: max-content; animation: credscroll 30s linear infinite; }
 .cred-group { display: flex; align-items: center; gap: calc(var(--ls,1) * 68px); padding-right: calc(var(--ls,1) * 68px); flex: none; }
 .cred-group img { height: calc(var(--ls,1) * 32px); width: auto; display: block; flex: none; }
-@keyframes credscroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-33.3333%,0,0); } }
+@keyframes credscroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-25%,0,0); } }
 
 section.block { padding: 30px 0 78px; }
 
@@ -670,7 +670,8 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
 
 /* ============ MOBILE: stacked scroll cards ============ */
 @media (max-width: 900px) {
-  .cred-track { animation-duration: 20s; }
+  .cred-track { animation-duration: 15s; }
+  .hero-cred { --ls: 0.58; }
   section.hero { position: sticky; }
   section.block.light,
   section.closing {
