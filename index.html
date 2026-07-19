@@ -141,14 +141,14 @@ p strong { font-weight: 500; color: var(--text-strong); }
 /* ============ CONTENT ============ */
 .content { flex: 1 1 auto; min-width: 0; padding: 0 44px; }
 
-.hero { min-height: calc(100vh - 88px); display: flex; flex-direction: column; padding: 36px 0 0; }
+.hero { min-height: calc(100vh - 108px); display: flex; flex-direction: column; padding: 20px 0 0; }
 .hero-copy { flex: 0 0 auto; margin-top: auto; margin-left: -44px; display: flex; flex-direction: column; }
 .hero .eyebrow { margin-bottom: 34px; }
 .hero h1 { max-width: 16ch; margin-bottom: 34px; }
 .hero .lead { margin-bottom: 0; }
-.hero .cta { margin-top: 24px; align-self: flex-start; padding: 18px 40px; }
-.hero-cred { flex: 0 0 auto; background: var(--blush); padding: 22px 0 32px; margin: 44px -44px 0; overflow: hidden; --ls: 0.74; }
-.cred-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); text-align: center; max-width: none; margin: 0 0 34px; }
+.hero .cta { margin-top: 14px; align-self: flex-start; padding: 18px 40px; }
+.hero-cred { flex: 0 0 auto; background: var(--blush); padding: 18px 0 22px; margin: 34px -44px 0; overflow: hidden; --ls: 0.60; }
+.cred-label { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--mid); text-align: center; max-width: none; margin: 0 0 16px; }
 .cred-viewport { overflow: hidden; }
 .cred-track { display: flex; align-items: center; width: max-content; animation: credscroll 30s linear infinite; }
 .cred-group { display: flex; align-items: center; gap: calc(var(--ls,1) * 68px); padding-right: calc(var(--ls,1) * 68px); flex: none; }
@@ -674,7 +674,7 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
 
 /* ============ MOBILE: stacked scroll cards ============ */
 @media (max-width: 900px) {
-  .cred-track { animation-duration: 15s; }
+  .cred-track { animation-duration: 40s; }
   .hero-cred { --ls: 0.58; }
   section.hero { position: sticky; }
   section.block.light,
@@ -736,7 +736,7 @@ section.block.light .who-feature-panel p.f-vat { font-size: 13px; color: #8C8C86
         <p style="font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin:0 0 18px;">For health &amp; consumer tech founders</p>
 <h1>Every company has two brands.<br><span style="color:var(--accent)">Most tech founders only build one.</span></h1>
         <p class="lead">We build the founder brand the market backs.</p>
-        <p style="margin-top:44px; font-size:19px; font-weight:600; color:var(--text-strong); line-height:1.5;">Your thinking is your unfair advantage.</p>
+        <p style="margin-top:22px; font-size:19px; font-weight:600; color:var(--text-strong); line-height:1.5;">Your thinking is your unfair advantage.</p>
         <p>Reach investors one meeting at a time and you're always running to rooms instead of building your company.</p>
         <p>Share your stories online and the market comes to you already understanding how you think. So you raise from better investors, hire better people and win the customers who were deciding between you and competitors. <span style="color: var(--accent); font-weight: 600;">Without becoming an influencer.</span></p>
         <a data-tf-popup="LCkxRrH1" data-tf-opacity="100" data-tf-size="100" data-tf-iframe-props="title=Start The Two Halves" data-tf-transitive-search-params data-tf-medium="snippet" href="#" class="cta">Book a Strategy Call →</a>
