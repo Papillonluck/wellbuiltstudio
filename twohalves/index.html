@@ -29,13 +29,13 @@ a{color:inherit;}
 
 /* SITE HEADER */
 .site-header{position:absolute;top:0;left:0;right:0;z-index:100;background:transparent;}
-.hdr-inner{max-width:1012px;margin:0 auto;padding:30px 72px;}
+.hdr-inner{max-width:1012px;margin:0 auto;padding:30px 72px 30px 0;}
 .site-header .wm{display:inline-block;line-height:0;text-decoration:none;}
 .site-header .wm img{width:185px;height:auto;display:block;}
 
 /* HERO — full charcoal, lots of air */
 .hero{background:var(--charcoal);padding:180px 0 80px;position:relative;}
-.hero-inner{max-width:1012px;margin:0 auto;padding:0 72px;}
+.hero-inner{max-width:1012px;margin:0 auto;padding:0 72px 0 0;}
 .hero .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;}
 .hero h1{max-width:16ch;margin-bottom:40px;}
 .hero .hero-lead{font-family:Georgia,serif;font-size:clamp(20px,2.3vw,25px);line-height:1.45;color:var(--text-body);max-width:40ch;}
@@ -58,12 +58,12 @@ a{color:inherit;}
 
 
 /* STAGE MAP overview graphic */
-.sm-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
-.sm-track::before{content:"";position:absolute;top:6px;left:6px;right:6px;height:2px;background:rgba(168,201,74,0.3);z-index:0;}
-.sm-dot{position:absolute;top:0;left:0;width:13px;height:13px;border-radius:50%;background:var(--accent);border:2px solid var(--accent);z-index:2;box-shadow:0 0 0 2px var(--cream),0 0 0 3px var(--accent);}
-.sm-step{position:relative;padding-top:26px;padding-right:16px;}
-.sm-num{display:block;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--soft);margin-bottom:8px;}
-.sm-name{display:block;font-family:Georgia,serif;font-size:17px;line-height:1.3;color:var(--charcoal);max-width:18ch;}
+.sm-track{display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.sm-track::before{content:"";position:absolute;top:6px;left:0;right:0;height:2px;background:rgba(168,201,74,0.3);z-index:0;}
+.sm-step{position:relative;padding-top:0;display:flex;flex-direction:column;align-items:center;text-align:center;}
+.sm-dot{width:13px;height:13px;border-radius:50%;background:var(--accent);border:2px solid var(--accent);z-index:2;box-shadow:0 0 0 2px #FFFFFF,0 0 0 3px var(--accent);margin-bottom:14px;}
+.sm-num{display:block;width:100%;text-align:center;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--soft);margin-bottom:8px;}
+.sm-name{display:block;text-align:center;font-family:Georgia,serif;font-size:17px;line-height:1.3;color:var(--charcoal);max-width:18ch;}
 
 /* stage map: line full width, dots spread edge to edge */
 
@@ -74,8 +74,8 @@ a{color:inherit;}
 .sm-dot.d3{left:calc(66.666% - 6px);}
 .sm-dot.d4{right:0;}
 .sm-step{position:relative;padding-top:26px;padding-right:16px;}
-.sm-num{display:block;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--soft);margin-bottom:8px;}
-.sm-name{display:block;font-family:Georgia,serif;font-size:17px;line-height:1.3;color:var(--charcoal);max-width:18ch;}
+.sm-num{display:block;width:100%;text-align:center;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.12em;color:var(--soft);margin-bottom:8px;}
+.sm-name{display:block;text-align:center;font-family:Georgia,serif;font-size:17px;line-height:1.3;color:var(--charcoal);max-width:18ch;}
 
 .stagemap h3{margin-bottom:60px;}
 
@@ -109,10 +109,14 @@ a{color:inherit;}
   .footer-inner{padding:88px 22px 56px;flex-direction:column;gap:32px;}
   .footer-contact{width:auto;padding-top:0;}
   .stage{margin-top:56px;}
-  .sm-title{margin-top:40px !important;margin-bottom:40px !important;}
-  .sm-track{grid-template-columns:1fr;gap:0;}
+.sm-title{margin-top:40px !important;margin-bottom:40px !important;}
+  .sm-track{display:block;position:relative;}
   .sm-track::before{top:6px;bottom:6px;left:6px;right:auto;width:2px;height:auto;}
-  .sm-step{padding:0 0 28px 30px;}
+  .sm-step{display:block;text-align:left;align-items:flex-start;position:relative;padding:0 0 28px 30px;}
+  .sm-step:last-child{padding-bottom:0;}
+  .sm-dot{position:absolute;top:2px;left:0;margin-bottom:0;transform:none;}
+  .sm-num{text-align:left;width:auto;margin-bottom:4px;}
+  .sm-name{text-align:left;max-width:none;}
   .sm-step:last-child{padding-bottom:0;}
   .sm-dot{top:2px;}
 }
@@ -123,7 +127,7 @@ a{color:inherit;}
 .stage-eyebrow{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--soft);margin-bottom:16px;}
 .stage h2{margin-bottom:20px;}
 .stage-lead{font-family:Georgia,serif;font-size:clamp(18px,2vw,21px);line-height:1.5;color:var(--charcoal);max-width:46ch;margin-bottom:30px;text-wrap:pretty;}
-.stage-body{max-width:58ch;}
+.stage-body{max-width:64ch;}
 .stage-body p{margin-bottom:0;}
 
 
@@ -131,7 +135,7 @@ a{color:inherit;}
 
 /* continuous stage rail (repo scrollrail language) */
 .stages-wrap{position:relative;}
-.lg-rail{position:absolute;left:44px;top:96px;bottom:96px;width:14px;z-index:0;}
+.lg-rail{position:absolute;left:72px;top:96px;bottom:96px;width:14px;z-index:0;}
 .lg-track{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:2px;background:rgba(168,201,74,0.22);}
 .lg-fill{position:absolute;top:0;left:50%;transform:translateX(-50%);width:2px;background:var(--accent);height:0;transition:height 0.15s ease-out;}
 .stages-inner{position:relative;z-index:1;}
@@ -238,6 +242,7 @@ a{color:inherit;}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease;}
 .reveal.in{opacity:1;transform:none;}
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+.intro-box{background:#FFFFFF;padding:48px 52px;border:0.5px solid rgba(26,26,24,0.06);margin-bottom:16px;}
 </style>
 </head>
 <body>
@@ -255,20 +260,22 @@ a{color:inherit;}
     <p class="eyebrow">Turn your thinking into your reputation</p>
     <h1>The Two Halves Intensive</h1>
     <p class="hero-lead">Align your founder and company brands, extract the stories only you can tell, and define the reputation you're building.</p>
-    <p class="meta">A four-stage methodology &middot; Delivered over approximately four weeks</p>
+    <p class="meta">A four-stage methodology &middot; Delivered over approximately four weeks</p>
   </div>
 </section>
 
 <main class="content">
 
 <!-- INTRO -->
-<section class="panel t-cream intro reveal">
+<section class="panel t-blush intro reveal">
+  <div class="intro-box">
+  <h3 style="margin-bottom:20px;">The Founder Brand Advantage</h3>
   <p class="lead">Where your two brands work together.</p>
   <p style="margin-top:34px;">As you scale, the market increasingly associates you with the company. Investors, customers, talent and partners start backing the founder as much as the business. The Intensive makes sure there's one clear story worth their trust, and gives you the blueprint for building the reputation that follows.</p>
   <p>Over the four stages, we work closely together through interviews, workshops and strategic review sessions. These assets are built with you, in the sessions themselves.</p>
 
   <div class="stagemap-inner">
-  <h3 class="sm-title" style="margin-top:48px;margin-bottom:56px;">The Four Stages to Build Your Reputation</h3>
+  <h3 class="sm-title" style="margin-top:40px;margin-bottom:40px;">The Four Stages to Build Your Reputation</h3>
   <div class="sm-track">
     <div class="sm-step"><span class="sm-dot"></span><span class="sm-num">01</span><span class="sm-name">Brand Positioning &amp; Story Alignment</span></div>
     <div class="sm-step"><span class="sm-dot"></span><span class="sm-num">02</span><span class="sm-name">Story Extraction</span></div>
@@ -332,7 +339,7 @@ a{color:inherit;}
     <h2>The Founder Reputation Blueprint</h2>
     <p class="stage-lead">A clear direction for the reputation you'll build from here.</p>
     <div class="stage-body">
-      <p>By the end of the Intensive, your positioning, stories and voice work together as one strategic foundation for the reputation you're building. You leave knowing exactly what you want to be known for, how to articulate what makes you different, and how to build that reputation online, so the right people are trusting you before you've said a word.</p>
+      <p>By the end of the Intensive, your positioning, stories and voice work together as one strategic foundation for the reputation you're building. You leave knowing exactly what you want to be known for, how to articulate what makes you different, and how to build that reputation online, so the right people are trusting you before you've said a word.</p>
     </div>
     <div class="incl-wrap inset">
       <p class="incl-head">You leave with</p>
